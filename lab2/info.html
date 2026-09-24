@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta charset="utf-8">
+    <title>Informações - Moscow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Estilização básica da Tabela */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 2px solid #000000;
+            padding: 12px;
+            text-align: center;
+        }
+
+        /* Cores de texto diferentes usando a propriedade color conforme pedido */
+        th {
+            background-color: #d81b60;
+            color: #ffffff; /* Texto dos cabeçalhos em Branco */
+            font-weight: bold;
+        }
+
+        .destaque-azul {
+            color: #00acc1; /* Texto em Azul Ciano */
+            font-weight: bold;
+        }
+
+        .destaque-laranja {
+            color: #ffb300; /* Texto em Laranja */
+            font-weight: bold;
+        }
+
+        /* Estilização da lista de curiosidades */
+        .curiosidades {
+            margin-top: 20px;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>O meu primeiro site - Lab 2</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="local.html">Localização</a></li>
+            <li><a href="multimedia.html">Multimédia</a></li>
+            <li><a href="info.html">Informações</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Informações</h2>
+        <p>Apresentamos abaixo os dados estatísticos climáticos e demográficos de Moscow, acompanhados por factos históricos surpreendentes sobre a região.</p>
+
+        <!-- SECCÃO DA TABELA -->
+        <section>
+            <h3>Dados Estatísticos da Cidade</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Indicador Atual</th>
+                        <th>Notas de Evolução</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Uso de rowspan para juntar duas linhas verticais na População -->
+                        <td rowspan="2" class="destaque-azul">População</td>
+                        <td>Aprox. 25.000 hab.</td>
+                        <td>Crescimento constante devido à universidade.</td>
+                    </tr>
+                    <tr>
+                        <td>Estudantes: ~11.000</td>
+                        <td>Representam quase metade dos habitantes locais.</td>
+                    </tr>
+                    <tr>
+                        <td class="destaque-laranja">Clima Médio</td>
+                        <td>Verão: 28°C | Inverno: -4°C</td>
+                        <td>Clima continental com invernos bastante nevados.</td>
+                    </tr>
+                    <tr>
+                        <!-- Uso de colspan para juntar três colunas horizontalmente na base -->
+                        <td colspan="3" style="background-color: #eceff1; font-size: 0.9rem;">
+                            Fonte oficial: Censos dos EUA e Registo da Universidade de Idaho.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECÇÃO DAS CURIOSIDADES -->
+        <section>
+            <h3>5 Curiosidades sobre Moscow, Idaho</h3>
+            <ul class="curiosidades">
+                <li><strong>O Coração das Artes:</strong> Apesar de ser uma cidade pequena, o letreiro oficial de boas-vindas define Moscow como o "Heart of the Arts" (Coração das Artes) devido ao seu forte festival de Jazz e feiras culturais.</li>
+                <li><strong>Origem do Nome:</strong> O nome não tem ligação política com a Rússia; foi escolhido em 1877 pelo chefe dos correios local, Samuel Neff, em homenagem à cidade onde ele cresceu na Pensilvânia (Moscow, PA).</li>
+                <li><strong>O Lendário Kibbie Dome:</strong> O estádio coberto da universidade já ganhou prémios de engenharia e arquitetura pela sua estrutura icónica de madeira curvada construída na década de 70.</li>
+                <li><strong>A Capital Mundial da Ervilha:</strong> A região de Palouse, onde a cidade se insere, já foi considerada a maior produtora mundial de ervilhas secas e lentilhas, celebrando anualmente o <em>National Lentil Festival</em> na zona.</li>
+                <li><strong>Geografia Única:</strong> As famosas colinas ondulantes que cercam a cidade não foram formadas por erosão de água ou rios, mas sim pelo vento acumulando dunas de poeira fértil ao longo de milhares de anos.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Universidade Lusófona, 2025</p>
+    </footer>
+
+</body>
+</html>

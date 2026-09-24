@@ -1,0 +1,86 @@
+/* -------------------------------------------------------------
+   1. O BODY (Cor de fundo geral da página)
+   ------------------------------------------------------------- */
+body {
+    background-color: #fce4ec; /* Tom rosa claro de fundo para toda a página */
+    font-family: Arial, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------------------------------------------
+   2. O HEADER e NAV (Elementos a Verde)
+   ------------------------------------------------------------- */
+header {
+    background-color: #2e7d32; /* Cor verde para o topo */
+    color: #ffffff;            /* Texto em branco para contraste */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    background-color: #388e3c; /* Tom de verde ligeiramente diferente para a navegação */
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;     /* Remove as bolinhas da lista */
+    margin: 0;
+    padding: 0;
+    display: flex;             /* Coloca os links lado a lado em linha */
+    gap: 20px;                 /* Espaçamento entre as opções do menu */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;     /* Remove o sublinhado padrão dos links */
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Adiciona sublinhado apenas ao passar o rato */
+}
+
+/* -------------------------------------------------------------
+   3. O MAIN (Conteúdo específico com os espaçamentos necessários)
+   ------------------------------------------------------------- */
+main {
+    background-color: #ffffff; /* Fundo branco para a caixa de conteúdo se destacar */
+    /* MARGIN: Cria o espaçamento lateral e vertical EXTERNO afastando o main do header e do footer */
+    margin: 30px auto; 
+    /* PADDING: Cria o espaçamento INTERNO para o texto não ficar colado às bordas brancas */
+    padding: 30px; 
+    max-width: 900px;          /* Limita a largura máxima para ficar centralizado e elegante */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave nas bordas */
+    border-radius: 4px;
+}
+
+/* Estilização padrão para imagens dentro do conteúdo */
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;         /* Centraliza a imagem no meio do conteúdo */
+}
+
+/* -------------------------------------------------------------
+   4. O FOOTER (Elemento a Preto)
+   ------------------------------------------------------------- */
+footer {
+    background-color: #212121; /* Cor preta/cinza escuro de fundo */
+    color: #ffffff;            /* Texto em branco */
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 40px;          /* Empurra o footer para a base da página */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Multimédia - Moscow</title>
+<link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Estilização Responsiva da Secção de Fotografias usando Flexbox */
+        .fotografias {
+            display: flex;
+            flex-wrap: wrap; /* Faz com que as fotos mudem de linha ao encurtar o browser */
+            gap: 15px;       /* Espaçamento entre as imagens */
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        .fotografias img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover; /* Garante que a imagem não fica distorcida */
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        /* Pequeno efeito visual ao passar o rato pelas fotos */
+        .fotografias img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilização do Poema com Seletores Pseudo-classe :nth-child */
+        .contentor-poema {
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* Aplica estilo a todos os versos (parágrafos) */
+        .contentor-poema p {
+            margin: 5px 0;
+            font-style: italic;
+        }
+
+        /* Demonstração do :nth-child ao professor: Altera a cor das linhas ímpares */
+        .contentor-poema p:nth-child(odd) {
+            color: #d81b60; /* Rosa escuro */
+            font-weight: bold;
+        }
+
+        /* Altera a cor das linhas pares */
+        .contentor-poema p:nth-child(even) {
+            color: #00acc1; /* Azul ciano */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>O meu primeiro site - Lab 2</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="local.html">Localização</a></li>
+            <li><a href="multimedia.html">Multimédia</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Multimédia</h2>
+        <p>Explore as componentes visuais, auditivas e artísticas da cidade de Moscow, Idaho.</p>
+
+        <!-- Menu de Âncoras para navegação interna rápida -->
+        <p>
+            Ir para: 
+            <a href="#fotos">Fotografias</a> | 
+            <a href="#video">Vídeo</a> | 
+            <a href="#poesia">Poesia</a>
+        </p>
+
+               <!-- SECÇÃO FOTOGRAFIAS -->
+        <section>
+            <h3 id="fotos">Fotografias</h3>
+            <div class="fotografias">
+                <!-- Caminhos atualizados para os seus ficheiros de 1 a 8 -->
+                <img src="images/1.jpg" alt="Ponto de interesse 1 de Moscow">
+                <img src="images/2.jpg" alt="Ponto de interesse 2 de Moscow">
+                <img src="images/3.jpg" alt="Ponto de interesse 3 de Moscow">
+                <img src="images/4.jpg" alt="Ponto de interesse 4 de Moscow">
+                <img src="images/5.jpg" alt="Ponto de interesse 5 de Moscow">
+                <img src="images/6.jpg" alt="Ponto de interesse 6 de Moscow">
+                <img src="images/7.jpg" alt="Ponto de interesse 7 de Moscow">
+                <img src="images/8.jpg" alt="Ponto de interesse 8 de Moscow">
+            </div>
+        </section>
+
+                 <!-- SECÇÃO VÍDEO -->
+        <section>
+            <h3 id="video">Vídeo</h3>
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://youtube.com" 
+                style="border:0; margin-top: 15px; margin-bottom: 30px; display: block;" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </section>
+
+
+
+        <!-- SECÇÃO POESIA -->
+        <section>
+            <h3 id="poesia">Poesia</h3>
+            <div class="contentor-poema">
+                <p>Nas colinas suaves de Palouse,</p>
+                <p>Onde o vento desenha ondas de trigo,</p>
+                <p>Ergue-se Moscow, calma e radiante,</p>
+                <p>Um porto seguro, um lar amigo.</p>
+                <p>Entre a academia e a natureza pura,</p>
+                <p>O norte de Idaho guarda esta pintura.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Universidade Lusófona, 2025</p>
+    </footer>
+
+</body>
+</html>
