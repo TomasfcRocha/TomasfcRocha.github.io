@@ -102,52 +102,21 @@ section {
    4. SECÇÃO 1: INÍCIO (Hero Image com texto absoluto)
    ========================================================================== */
 #inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Correct local image path combined with a dark overlay to make text readable */
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
-                      url('https://sah-archipedia.org');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.hero-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 800px;
-    color: white;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    font-weight: 800;
-}
-
-.hero-text {
-    font-size: 1.3rem;
-    font-style: italic;
-    margin-bottom: 35px;
-    opacity: 0.9;
-}
-
-.hero-cta {
-    display: inline-block;
-    background-color: #0073e6;
-    color: white !important;
-    padding: 14px 35px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 30px; /* Botão em formato pill moderno */
-    box-shadow: 0 4px 15px rgba(0, 73, 230, 0.3);
-    transition: all 0.3s ease;
-}
-
-.hero-cta:hover {
-    background-color: #005bb5;
-    transform: translateY(-2px);
+                      url('images/tilcayo.jpg');
+    
+    /* Core Hero Image properties */
+    background-size: cover;        /* Scales the image to completely fill the screen */
+    background-repeat: no-repeat;  /* Prevents tiling/repeating */
+    background-position: center;   /* Centers the image frame */
+    
+    width: 100%;
+    height: 100vh;                 /* Forces the hero area to fill the whole screen height */
 }
 
 /* ==========================================================================
@@ -409,4 +378,23 @@ footer {
     width: 100%;
     height: 100%;
     border: 0;
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* This creates a semi-transparent dark overlay directly on top of the image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/tilcayo.jpg');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  
+  /* Ensure the section has enough height to actually show the image */
+  min-height: 80vh; 
 }

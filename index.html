@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O meu primeiro site</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -23,23 +23,26 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </label>
-
+        
         <!-- O menu que irá deslizar lateralmente no telemóvel -->
         <nav class="nav-menu">
             <a href="#inicio" class="nav-link">Início</a>
             <a href="#projetos" class="nav-link">Projetos</a>
-            <a href="tutoriais.html" class="nav-link">Tutoriais</a> <!-- NOVO LINK ADICIONADO -->
+            <a href="tutoriais.html" class="nav-link">Tutoriais</a>
             <a href="#cadeira" class="nav-link UC-btn">Interfaces Web</a>
         </nav>
     </header>
 
     <main>
         <!-- Secção 1: Hero Image -->
-        <section id="inicio">
+        <section id="inicio" class="hero-section">
+            <div class="hero-overlay"></div>
             <div class="hero-container">
                 <h1 class="hero-title">O meu primeiro site</h1>
                 <p class="hero-text">"O sucesso no desenvolvimento Web começa com a coragem de criar o primeiro ecrã."</p>
-                <a href="#projetos" class="hero-cta">Ver os Meus Projetos</a>
+                <div class="hero-actions">
+                    <a href="#projetos" class="hero-cta">Ver os Meus Projetos</a>
+                </div>
             </div>
         </section>
 
@@ -53,14 +56,17 @@
                     <h3>Lab 1</h3>
                     <p>Estrutura base e semântica</p>
                 </a>
+                
                 <a href="lab2/index.html" class="card">
                     <h3>Lab 2</h3>
                     <p>Estilos e layout responsivo</p>
                 </a>
+                
                 <a href="lab3/index.html" class="card">
                     <h3>Lab 3</h3>
                     <p>Interatividade com JS</p>
                 </a>
+                
                 <!-- NOVO CARTÃO: TUTORIAIS & CODEPENS -->
                 <a href="tutoriais.html" class="card" style="border: 2px solid #007BFF;">
                     <h3>Tutoriais & CodePens</h3>
