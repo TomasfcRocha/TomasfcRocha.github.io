@@ -1,0 +1,805 @@
+/* ==========================================================================
+   1. RESET, BASE E FLUIDEZ
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fce4ec; /* Fundo rosa claro original */
+    font-family: Arial, sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. HEADER E GAVETA LATERAL RESPONSIVA (VERDE ORIGINAL)
+   ========================================================================== */
+header {
+    background-color: #2e7d32;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #ffffff;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    background-color: #388e3c;
+    text-decoration: underline;
+}
+
+.back-root {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 0.9rem;
+}
+
+.back-root:hover {
+    background-color: #ffffff !important;
+    color: #2e7d32 !important;
+    text-decoration: none !important;
+}
+
+/* ==========================================================================
+   3. CONFIGURAÇÃO DAS SECÇÕES DE ECRÃ INTEIRO (Efeito 100vh)
+   ========================================================================== */
+.seccao-multimedia {
+    height: 100vh; /* Requisito do enunciado: cada secção ocupa o ecrã inteiro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 90px 20px 40px 20px; /* Compensação por causa do menu de topo fixo */
+    width: 100%;
+}
+
+/* Caixa branca centralizada de conteúdo para manter a elegância do laboratório */
+.conteudo-interno {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.conteudo-interno h3 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #2e7d32;
+}
+
+/* CORES DE FUNDO DIFERENTES PARA CADA CONTEÚDO (Requisito do enunciado) */
+#fotos {
+    background-color: #e8f5e9; /* Tom Verde muito claro */
+}
+
+#video {
+    background-color: #e1f5fe; /* Tom Azul muito claro */
+}
+
+#poesia {
+    background-color: #fce4ec; /* Tom Rosa muito claro */
+}
+
+/* ==========================================================================
+   4. NOVA SECÇÃO: IMAGEM EMBLEMÁTICA LARGURA TOTAL COM TEXTO ABSOLUTO
+   ========================================================================== */
+#section-destaque {
+    height: auto;
+    padding: 0;
+    margin-top: 70px; /* Alinha logo abaixo do cabeçalho fixo */
+    width: 100%;
+}
+
+/* ==========================================================================
+   AJUSTE DA IMAGEM DE DESTAQUE / PANORÂMICA (ALTURA REDUZIDA)
+   ========================================================================== */
+.destaque-container, .panoramica-container {
+    position: relative;
+    width: 100%;
+    height: 30vh; /* Reduzido de 60vh para 30vh para não dominar o ecrã */
+    min-height: 220px; /* Garante uma altura mínima bonita em qualquer monitor */
+}
+
+.img-fullwidth, .img-panoramica {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Texto Motivacional Posicionado com Absolute e Fontes Responsivas em vw */
+.destaque-texto-absoluto {
+    position: absolute; /* Filho "absolute" obrigatório do enunciado */
+    bottom: 10%;       /* Posicionado próximo da base da imagem */
+    left: 5%;          /* Afastado da borda esquerda */
+    background-color: rgba(46, 125, 50, 0.85); /* Fundo verde translúcido para contraste */
+    padding: 10px 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.destaque-texto-absoluto h2 {
+    margin: 0;
+    color: #ffffff;
+    /* Requisito do enunciado: unidade vw para o texto se adaptar à largura da janela */
+    font-size: 3.5vw; 
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* ==========================================================================
+   5. REGRAS DE LAYOUT ESPECÍFICAS (FOTOS, VÍDEO E POEMA)
+   ========================================================================== */
+
+/* Grid de Fotografias Flexbox */
+.fotografias-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.fotografias-grid img {
+    width: 160px;
+    height: 110px;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.fotografias-grid img:hover {
+    transform: scale(1.08);
+}
+
+/* Caixa de Vídeo Fluida e Responsiva */
+/* Caixa de Vídeo Fluida e Responsiva (Atualizado para a tag <video>) */
+.video-wrapper {
+    max-width: 650px; /* Largura máxima elegante para o cartão */
+    margin: 20px auto 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    line-height: 0; /* Remove margem fantasma por baixo do vídeo */
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Estrutura Interna do Poema */
+.contentor-poema {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 15px;
+    border-left: 5px solid #2e7d32;
+    text-align: left;
+}
+
+.contentor-poema p {
+    margin: 8px 0;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Pseudo-classes :nth-child mantidas conforme a tua versão original */
+.contentor-poema p:nth-child(odd) {
+    color: #d81b60;
+    font-weight: bold;
+}
+
+.contentor-poema p:nth-child(even) {
+    color: #00acc1;
+}
+
+/* Footer padrão */
+footer {
+    background-color: #212121;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE DO MENU EM GAVETA (Telemóveis)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hamburguer-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .bar {
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 260px;
+        height: 100vh;
+        background-color: #2e7d32;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        z-index: 1050;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        font-size: 1.15rem;
+    }
+
+    .menu-checkbox:checked ~ .nav-menu {
+        transform: translateX(0);
+    }
+
+    .menu-checkbox:checked + .hamburguer-label .bar:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+    
+    .menu-checkbox:checked + .hamburguer-label .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-checkbox:checked + .hamburguer-label .bar:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* Em ecrãs pequenos, aumentamos a fonte em vw para o texto não sumir */
+    .destaque-texto-absoluto h2 {
+        font-size: 5vw;
+    }
+
+    /* Permite que o ecrã encolha no mobile sem cortar conteúdo das caixas brancas */
+    .seccao-multimedia {
+        height: auto;
+        padding: 100px 10px 40px 10px;
+    }
+    
+    .conteudo-interno {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburguer-label {
+        display: none;
+    }
+}
+/* ==========================================================================
+   7. REGRAS ESPECÍFICAS PARA A PÁGINA DE INFORMAÇÃO (CSS GRID 2D)
+   ========================================================================== */
+
+/* Remove a limitação da altura de 100vh se o conteúdo do Grid for muito grande no PC */
+.seccao-info-grid {
+    height: auto !important;
+    min-height: 100vh;
+}
+
+/* Estrutura da Grelha Grid (Predefinição para Computador) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Colunas iguais em largura */
+    grid-gap: 20px;                         /* Espaçamento entre os blocos */
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Estilo unificado para todas as células da Grelha */
+.grid-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- POSICIONAMENTO IMAGINATIVO DOS ELEMENTOS NO GRID (2D) --- */
+
+/* O cabeçalho da info ocupa a 1ª linha inteira (da coluna 1 à coluna 4) */
+.item-header {
+    grid-column: 1 / 4; 
+    text-align: center;
+}
+
+/* A Tabela Estatística fica na coluna 1 e 2 e estende-se verticalmente */
+.item-tabela {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+}
+
+/* A primeira Imagem fica à direita da Tabela (Coluna 3, Linha 2) */
+.item-img1 {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 0; /* Remove padding para a imagem preencher o bloco */
+    overflow: hidden;
+}
+
+/* Espaço Vazio 1 intencional para equilibrar o design (Coluna 3, Linha 3) */
+.item-vazio1 {
+    grid-column: 3;
+    grid-row: 3;
+    background-color: transparent; /* Sem cor de fundo */
+    box-shadow: none;              /* Sem sombra */
+}
+
+/* As Curiosidades ocupam a Coluna 2 e 3 na Linha 4 */
+.item-curiosidades {
+    grid-column: 2 / 4;
+    grid-row: 4;
+    text-align: left;
+}
+
+/* A segunda Imagem fica na base esquerda (Coluna 1, Linha 4) */
+.item-img2 {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Espaço Vazio 2 intencional na Linha 5, ocupando todo o rodapé da grelha */
+.item-vazio2 {
+    grid-column: 1 / 4;
+    grid-row: 5;
+    height: 40px; /* Apenas um respiro antes do footer oficial */
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* --- ESTILOS COMPLEMENTARES INTERNOS (TABELA, IMAGENS E LISTAS) --- */
+.grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta a imagem graciosamente no bloco */
+}
+
+.info-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.info-table th, .info-table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    text-align: center;
+}
+
+.info-table th {
+    background-color: #2e7d32; /* Alinhado com o Verde do teu Header */
+    color: #ffffff;
+}
+
+.destaque-azul {
+    color: #0288d1;
+    font-weight: bold;
+}
+
+.destaque-laranja {
+    color: #f57c00;
+    font-weight: bold;
+}
+
+.table-font-note {
+    background-color: #f5f5f5;
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+.curiosidades {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.curiosidades li {
+    margin: 8px 0;
+}
+
+/* --- RESPONSIVIDADE DO GRID PARA TELEMÓVEL --- */
+@media (max-width: 768px) {
+    /* No telemóvel desmanchamos o Grid 2D e empilhamos tudo verticalmente numa só coluna */
+    .grid-container {
+        grid-template-columns: 1fr; /* Transforma em 1 coluna única */
+    }
+
+    /* Cancela todas as posições específicas para que o navegador ordene por ordem natural do HTML */
+    .item-header, .item-tabela, .item-img1, .item-curiosidades, .item-img2 {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    /* Remove os espaços vazios no telemóvel para poupar scroll desnecessário */
+    .item-vazio1, .item-vazio2 {
+        display: none;
+    }
+}
+/* ==========================================================================
+   SECÇÃO FOTOGRAFIA PANORÂMICA (100% LARGURA DO ECRÃ)
+   ========================================================================== */
+/* ==========================================================================
+   SECÇÃO FOTOGRAFIA PANORÂMICA COM TEXTO ABSOLUTO
+   ========================================================================== */
+#foto-panoramica-total {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+}
+
+/* O Contentor PAI precisa de position: relative */
+
+.img-panoramica {
+    width: 100%;
+    height: 60vh; /* Ocupa 60% da altura do ecrã */
+    object-fit: cover;
+    display: block;
+}
+
+/* O Bloco FILHO é posicionado com position: absolute */
+.texto-sobreposto-absoluto {
+    position: absolute;
+    top: 50%;         /* Alinha a partir do meio vertical da imagem */
+    left: 50%;        /* Alinha a partir do meio horizontal da imagem */
+    transform: translate(-50%, -50%); /* Garante o alinhamento central perfeito */
+    text-align: center;
+    width: 90%;       /* Evita que o texto toque nas margens do ecrã */
+    pointer-events: none; /* Garante que o texto não interfere com cliques na página */
+}
+
+/* Frase estilizada com a unidade vw (Viewport Width) */
+.frase-emblematica {
+    font-size: 3.5vw; /* O tamanho adapta-se dinamicamente à largura do ecrã */
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra para garantir leitura sobre a foto */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0; /* Remove margens padrão do parágrafo */
+}
+/* ==========================================================================
+   ALINHAMENTO DA PÁGINA DE LOCALIZAÇÃO (FLEXBOX)
+   ========================================================================== */
+
+/* 1. Ajuste da secção para compensar o header fixo */
+#video.seccao-multimedia {
+    padding-top: 100px; 
+    min-height: calc(100vh - 70px); /* Garante que ocupa o ecrã inteiro */
+}
+
+/* 2. Configuração do Contentor para Telemóveis (Padrão Mobile-First) */
+.localizacao-container {
+    display: flex;
+    flex-direction: column; /* Coloca o texto por cima do mapa no telemóvel */
+    gap: 30px;              /* Espaço de separação entre o texto e o mapa */
+    width: 100%;
+}
+
+.localizacao-texto, 
+.localizacao-mapa {
+    width: 100%;
+}
+
+/* Tornar o iframe do Google Maps responsivo */
+.localizacao-mapa iframe {
+    width: 100%;
+    height: 400px;          /* Altura fixa confortável para o mapa */
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Configuração para Computadores (Ecrãs a partir de 768px de largura) */
+@media (min-width: 768px) {
+    .localizacao-container {
+        flex-direction: row; /* Coloca o texto AO LADO do mapa no PC */
+        align-items: center; /* Alinha verticalmente o texto e o mapa ao centro */
+    }
+
+    .localizacao-texto {
+        flex: 1;             /* O texto ocupa metade do espaço disponível */
+        padding-right: 20px; /* Margem de segurança à direita do texto */
+    }
+
+    .localizacao-mapa {
+        flex: 1;             /* O mapa ocupa a outra metade do espaço disponível */
+    }
+}
+/* ==========================================================================
+   CONFIGURAÇÃO DE CSS GRID PARA A PÁGINA INFO
+   ========================================================================== */
+
+/* 1. Ajuste da secção para afastar do cabeçalho fixo */
+.seccao-info-grid {
+    padding-top: 100px !important;
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. O Contentor Grid Principal (Ativa a Grelha 2D) */
+.grid-container {
+    display: grid;
+    /* Cria 3 colunas iguais no PC */
+    grid-template-columns: repeat(3, 1fr);
+    /* Cria as linhas necessárias ajustadas ao tamanho do conteúdo */
+    grid-template-rows: auto;
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Estilo base para todos os itens da grelha */
+.grid-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 3. Posicionamento Estrutural dos Elementos (Mapeamento) */
+
+/* Item 1: Ocupa as 3 colunas superiores completas (Linha 1) */
+.item-header {
+    grid-column: 1 / 4;
+    background-color: #f1f2f6;
+}
+.item-header h2 {
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+/* Item 2: Tabela Estatística ocupa as duas primeiras colunas da Linha 2 */
+.item-tabela {
+    grid-column: 1 / 3;
+}
+
+/* Item 3: Primeira imagem fica na terceira coluna da Linha 2 */
+.item-img1 {
+    grid-column: 3 / 4;
+    padding: 0; /* Remove padding para a imagem encostar nas bordas */
+    overflow: hidden;
+}
+
+/* Item 4: Espaço Vazio 1 (Sem cor de fundo, puramente decorativo) */
+.item-vazio1 {
+    grid-column: 1 / 2;
+    background: transparent;
+    box-shadow: none;
+    border: 2px dashed #ddd; /* Linha tracejada opcional só para ver o espaço na aula */
+}
+
+/* Item 5: Bloco de Curiosidades ocupa as colunas 2 e 3 da Linha 3 */
+.item-curiosidades {
+    grid-column: 2 / 4;
+}
+
+/* Item 6: Segunda imagem fica na primeira coluna da Linha 4 */
+.item-img2 {
+    grid-column: 1 / 2;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Item 7: Espaço Vazio 2 ocupa as colunas 2 e 3 da Linha 4 */
+.item-vazio2 {
+    grid-column: 2 / 4;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* 4. Estilização das Imagens dentro da Grelha */
+.grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preenche o quadrado sem distorcer */
+    display: block;
+    min-height: 250px;
+}
+
+/* 5. Estilização da Tabela HTML Interna */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.info-table th, .info-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+.info-table th {
+    background-color: #1a1a1a;
+    color: white;
+}
+.destaque-azul {
+    background-color: #e3f2fd;
+    font-weight: bold;
+}
+.destaque-laranja {
+    background-color: #fff3e0;
+    font-weight: bold;
+}
+.table-font-note {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666;
+    background-color: #fafafa;
+}
+
+/* 6. Estilização da Lista de Curiosidades */
+ul.curiosidades {
+    list-style-type: none;
+    padding-top: 15px;
+}
+ul.curiosidades li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+ul.curiosidades li::before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Quebra a Grelha para Telemóveis)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Muda para apenas 1 coluna vertical */
+    }
+    
+    /* Força todos os elementos a ocuparem a única coluna disponível */
+    .grid-item {
+        grid-column: 1 / 2 !important;
+    }
+    
+    /* Esconde os espaços vazios intencionais no telemóvel para não criar buracos estranhos */
+    .item-vazio1, .item-vazio2 {
+        display: none;
+    }
+}
+/* ==========================================================================
+   Estilos Adicionais: Vídeo de Fundo & Parallax
+   ========================================================================== */
+
+/* 1. Secção de Vídeo de Fundo */
+#video-fundo-seccao {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Ocupa 60% da altura da janela visível */
+    overflow: hidden;
+}
+
+.video-fundo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-fundo-elemento {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo preencha toda a secção de forma responsiva */
+}
+
+.video-fundo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); /* Escurece o vídeo para dar legibilidade ao texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.video-fundo-conteudo {
+    color: #ffffff;
+    padding: 20px;
+}
+
+.video-fundo-conteudo h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* 2. Secção de Efeito Parallax */
+#parallax-seccao {
+    position: relative;
+    width: 100%;
+    height: 45vh; /* Altura ajustável da faixa parallax */
+    background-image: url('images/emblematicSkyline.jpg'); /* Altere para a imagem que preferir usar de fundo */
+    background-attachment: fixed; /* Força o fundo a ficar imóvel ao fazer scroll */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.4); /* Filtro escuro diretamente via CSS */
+}
+
+.parallax-conteudo h3 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}

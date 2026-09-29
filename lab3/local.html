@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localização - New York City</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Cabeçalho Fixo com o Menu Hambúrguer Criativo Lateral (Idêntico ao lab3) -->
+    <header>
+        <div class="header-logo">
+            <h1>New York City</h1>
+        </div>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        
+        <label for="menu-toggle" class="hamburguer-label">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="local.html" class="nav-link">Localização</a>
+            <a href="multimedia.html" class="nav-link">Multimédia</a>
+            <a href="info.html" class="nav-link">Informação</a>
+            <a href="../index.html" class="nav-link back-root">Voltar ao Portefólio</a>
+        </nav>
+    </header>
+
+    <!-- Secção de Ecrã Inteiro (Usa o ID #video para herdar a cor de fundo azul claro do teu CSS global) -->
+    <section id="video" class="seccao-multimedia">
+        <div class="conteudo-interno">
+            
+            <!-- Contentor Flexbox que controla o alinhamento responsivo -->
+            <div class="localizacao-container">
+                
+                <!-- Bloco de Texto (Original) - Fica à esquerda no PC, por cima no telemóvel -->
+                <div class="localizacao-texto">
+                    <h2>Localização</h2>
+                    <p>
+                        New York City é uma metrópole localizada no continente da América do Norte, mais especificamente na Costa Leste dos Estados Unidos, no sul do estado de Nova Iorque. Geograficamente, a cidade situa-se numa das maiores baías naturais do mundo, na foz do rio Hudson com o rio East, desaguando diretamente no Oceano Atlântico. A sua geografia única é dividida em cinco distritos conhecidos como boroughs: Manhattan, Brooklyn, Queens, The Bronx e Staten Island, sendo amplamente reconhecida como um dos principais centros financeiros, políticos e culturais do planeta.
+                    </p>
+                </div>
+
+                <!-- Bloco do Mapa (Iframe responsivo atualizado para New York City) - Fica à direita no PC, por baixo no telemóvel -->
+                <div class="localizacao-mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.05054950784!2d-74.30915993230967!3d40.69719336013737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNova%20Iorque%2C%20NY%2C%20EUA!5e0!3m2!1spt-PT!2spt!4v1790702041244!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>DIW 2026 - Universidade Lusófona</p>
+    </footer>
+
+</body>
+</html>

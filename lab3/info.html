@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações - New York City</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Cabeçalho Fixo com o Menu Hambúrguer Criativo Lateral -->
+    <header>
+        <div class="header-logo">
+            <h1>New York City</h1>
+        </div>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        
+        <label for="menu-toggle" class="hamburguer-label">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="local.html" class="nav-link">Localização</a>
+            <a href="multimedia.html" class="nav-link">Multimédia</a>
+            <a href="info.html" class="nav-link">Informação</a>
+            <a href="../index.html" class="nav-link back-root">Voltar ao Portefólio</a>
+        </nav>
+    </header>
+
+    <!-- Secção com o Contentor Grid baseado no modelo Blueprint -->
+    <section id="fotos" class="seccao-multimedia seccao-info-grid">
+        
+        <div class="grid-container-layout">
+            
+            <!-- ITEM 1: TÍTULO DO GRID (Linha 1 | Colunas 1 a 4) -->
+            <div class="grid-item item-header">
+                <h2>Informações Estatísticas e Curiosidades</h2>
+                <p>Apresentamos abaixo os dados estatísticos climáticos e demográficos de New York City, acompanhados por factos históricos surpreendentes sobre a metrópole.</p>
+            </div>
+
+            <!-- ITEM 2: HERO IMAGE (Linha 2 | Coluna 1) -->
+            <div class="grid-item item-hero">
+                <img src="images/download (15).jpg" alt="Skyline de New York City" class="grid-img">
+            </div>
+
+            <!-- ITEM 3: MAIN CONTENT / TABELA (Linhas 2 a 4 | Colunas 2 e 3) -->
+            <div class="grid-item item-main-content">
+                <h3>Dados Estatísticos da Cidade</h3>
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Indicador Atual</th>
+                            <th>Notas de Evolução</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="destaque-azul-tabela">População</td>
+                            <td>Aprox. 8,3 milhões hab.</td>
+                            <td>A cidade mais populosa e densamente habitada dos EUA.</td>
+                        </tr>
+                        <tr>
+                            <td>Turistas: ~65 milhões/ano</td>
+                            <td>Uma das cidades mais visitadas e multiculturais do mundo.</td>
+                        </tr>
+                        <tr>
+                            <td class="destaque-laranja-tabela">Clima Médio</td>
+                            <td>Verão: 29°C | Inverno: -1°C</td>
+                            <td>Clima temperado com verões húmidos e invernos com neve.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="table-font-note">
+                                Fonte oficial: US Census Bureau e National Weather Service.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ITEM 4: SIDEBAR / CURIOSIDADES (Linhas 3 a 5 | Coluna 1) -->
+            <div class="grid-item item-sidebar">
+                <h3>5 Curiosidades sobre NYC</h3>
+                <ul class="curiosidades-lista">
+                    <li><strong>A Grande Maçã:</strong> O termo "Big Apple" nasceu no desporto hípico e foi popularizado pelo jazz.</li>
+                    <li><strong>Origem do Nome:</strong> Foi fundada como Nova Amesterdão e rebatizada em 1664 em honra do Duque de York.</li>
+                    <li><strong>O Icónico Central Park:</strong> É um parque inteiramente planeado e é maior do que o principado do Mónaco.</li>
+                    <li><strong>Línguas Diversas:</strong> Estima-se que sejam falados mais de 800 idiomas diferentes na cidade.</li>
+                    <li><strong>Estátua da Liberdade:</strong> Foi um presente de França e serviu originalmente como um farol de navegação.</li>
+                </ul>
+            </div>
+
+            <!-- ITEM 5: EXTRA CONTENT (Linha 4 | Colunas 2 e 3) -->
+            <div class="grid-item item-extra-content">
+                <h3>Contexto Regional e Desenvolvimento</h3>
+                <p>New York City destaca-se como o epicentro financeiro, cultural e mediático global, equilibrando perfeitamente a energia vertiginosa de Manhattan com a identidade artística de Brooklyn, a diversidade de Queens e a beleza natural do rio Hudson.</p>
+            </div>
+
+            <!-- ITEM 6: RELATED IMAGES (Linha 5 | Colunas 1 e 2) -->
+            <div class="grid-item item-related-images">
+                <h3>Imagens Relacionadas</h3>
+                <div class="subgrelha-imagens">
+                    <img src="images/download (1).jpg" alt="Miniatura Times Square" class="miniatura-grid">
+                    <img src="images/download (2).jpg" alt="Miniatura Central Park" class="miniatura-grid">
+                    <img src="images/download (3).jpg" alt="Miniatura Subway" class="miniatura-grid">
+                    <img src="images/download (4).jpg" alt="Miniatura Empire State" class="miniatura-grid">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>DIW 2026 - Universidade Lusófona</p>
+    </footer>
+
+</body>
+</html>

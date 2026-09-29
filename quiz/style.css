@@ -1,0 +1,72 @@
+/* Framed sections */
+body {
+	margin: 0;
+	padding: 1rem;
+	background: #fafafa;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 1rem;
+	align-items: start;
+}
+
+header,
+nav,
+main,
+section,
+article,
+aside,
+footer {
+	border: 2px solid #222;
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background: #fff;
+}
+
+header,
+nav,
+footer {
+	grid-column: 1 / -1;
+}
+
+main {
+	display: grid;
+	grid-column: 1 / span 9;
+	grid-row: 2 / span 3;
+	gap: 1rem;
+	background: #d9534f;
+	color: #c53535;
+}
+
+aside {
+	grid-column: 10 / -1;
+	grid-row: 2 / span 3;
+	height: 100%;
+	min-height: 28rem;
+	background: #dfeecf;
+	color: #1f2e1d;
+}
+
+section {
+	background: #f7b5b3;
+	color: #2b1b1b;
+}
+
+header {
+	background: #173d30;
+	color: #4bcf66;
+}
+
+aside {
+	background: #dfeecf;
+	color: #1f2e1d;
+}
+
+footer {
+	background: #234f3e;
+	color: #24df4a;
+}
+

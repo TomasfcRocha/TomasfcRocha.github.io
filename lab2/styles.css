@@ -8,6 +8,10 @@ body {
     margin: 0;
     padding: 0;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* -------------------------------------------------------------
    2. O HEADER e NAV (Elementos a Verde)
@@ -38,9 +42,8 @@ nav ul {
 }
 
 nav a {
-    color: #ffffff;
     text-decoration: none;     /* Remove o sublinhado padrão dos links */
-    font-weight: bold;
+    color:inherit;
 }
 
 nav a:hover {

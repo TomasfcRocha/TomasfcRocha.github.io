@@ -1,46 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>O meu primeiro site</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+    <!-- Menu de Navegação Responsivo e Criativo (CSS Lateral Drawer) -->
     <header>
-        <h1>O meu primeiro site</h1>
+        <div class="header-logo">
+            <span>O meu primeiro site</span>
+        </div>
+        
+        <!-- O truque do CSS: Um gatilho invisível para controlar o menu -->
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        
+        <!-- O ícone do Hambúrguer que o utilizador vai clicar -->
+        <label for="menu-toggle" class="hamburguer-label">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <!-- O menu que irá deslizar lateralmente no telemóvel -->
+        <nav class="nav-menu">
+            <a href="#inicio" class="nav-link">Início</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="tutoriais.html" class="nav-link">Tutoriais</a> <!-- NOVO LINK ADICIONADO -->
+            <a href="#cadeira" class="nav-link UC-btn">Interfaces Web</a>
+        </nav>
     </header>
 
     <main>
-        <p>Eis a minha primeira página Web</p>
-        
-        <p>
-            Na Unidade Curricular de 
-            <!-- Link do Moodle atualizado com target="_blank" para abrir num novo separador -->
-            <a href="https://ulusofona.pt" target="_blank">Desenvolvimento de Interfaces Web</a> 
-            abordamos as seguintes tecnologias Web 🌐
-        </p>
-        
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React e Next.js</li>
-        </ul>
-        
-        <p>Iremos criar soluções criativas!</p>
-        
-        <ul>
-            <li><a href="lab1/index.html">Lab1</a></li>
-            <li><a href="lab2/index.html">Lab2</a></li>
-        </ul>
+        <!-- Secção 1: Hero Image -->
+        <section id="inicio">
+            <div class="hero-container">
+                <h1 class="hero-title">O meu primeiro site</h1>
+                <p class="hero-text">"O sucesso no desenvolvimento Web começa com a coragem de criar o primeiro ecrã."</p>
+                <a href="#projetos" class="hero-cta">Ver os Meus Projetos</a>
+            </div>
+        </section>
 
-        <!-- Imagem configurada com o atributo style para ter a largura de 300px -->
-        <img src="lab1/images/diw.svg" alt="Desenvolvimento de Interfaces Web" style="width: 300px;">
+        <!-- Secção 2: Projetos -->
+        <section id="projetos">
+            <h2>Projetos / Labs</h2>
+            <p class="section-subtitle">Alguns exercícios desenvolvidos ao longo da UC.</p>
+            
+            <div class="cards-container">
+                <a href="lab1/index.html" class="card">
+                    <h3>Lab 1</h3>
+                    <p>Estrutura base e semântica</p>
+                </a>
+                <a href="lab2/index.html" class="card">
+                    <h3>Lab 2</h3>
+                    <p>Estilos e layout responsivo</p>
+                </a>
+                <a href="lab3/index.html" class="card">
+                    <h3>Lab 3</h3>
+                    <p>Interatividade com JS</p>
+                </a>
+                <!-- NOVO CARTÃO: TUTORIAIS & CODEPENS -->
+                <a href="tutoriais.html" class="card" style="border: 2px solid #007BFF;">
+                    <h3>Tutoriais & CodePens</h3>
+                    <p>Ensinar é a melhor forma de aprender</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Secção 3: Disciplina -->
+        <section id="cadeira">
+            <div class="cadeira-container">
+                <div class="cadeira-texto">
+                    <h2>Interfaces Web</h2>
+                    <p>Na Unidade Curricular de Desenvolvimento de Interfaces Web abordamos as seguintes tecnologias Web:</p>
+                    <ul class="tecnologias-lista">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React e Next.js</li>
+                    </ul>
+                </div>
+                <div class="cadeira-imagem">
+                    <img src="lab1/images/diw.svg" alt="Desenvolvimento de Interfaces Web" class="wordcloud-img">
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>Universidade Lusófona, 2025</p>
+        <p>Universidade Lusófona, 2026</p>
     </footer>
 
 </body>

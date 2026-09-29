@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimédia - New York City</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Cabeçalho Fixo com o Menu Hambúrguer Criativo Lateral -->
+    <header>
+        <div class="header-logo">
+            <h1>New York City</h1>
+        </div>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        
+        <label for="menu-toggle" class="hamburguer-label">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="local.html" class="nav-link">Localização</a>
+            <a href="multimedia.html" class="nav-link">Multimédia</a>
+            <a href="info.html" class="nav-link">Informação</a>
+            <a href="../index.html" class="nav-link back-root">Voltar ao Portefólio</a>
+        </nav>
+    </header>
+
+    <!-- Removido o <main> padrão para permitir que as secções quebrem a página e ocupem 100% da largura do ecrã -->
+    
+    <!-- NOVA SECÇÃO: DESTAQUE EMBLEMÁTICO (PIXABAY / LARGURA TOTAL) -->
+    <section id="section-destaque">
+        <div class="destaque-container">
+            <!-- Imagem de paisagem inspiradora das luzes e arranha-céus de New York City -->
+            <img src="images/emblematicSkyline.jpg" alt="Skyline Emblemático de New York City" class="img-fullwidth">
+            <div class="destaque-texto-absoluto">
+                <h2>Descubra a Magia da Grande Maçã</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO 1: FOTOGRAFIAS -->
+    <section id="fotos" class="seccao-multimedia">
+        <div class="conteudo-interno">
+            <h3>Fotografias</h3>
+            <p>Explore as componentes visuais da cidade.</p>
+            <div class="fotografias-grid">
+                <img src="images/download (5).jpg" alt="Ponto de interesse 1 de New York City - Times Square">
+                <img src="images/download (6).jpg" alt="Ponto de interesse 2 de New York City - Central Park">
+                <img src="images/download (7).jpg" alt="Ponto de interesse 3 de New York City - Estátua da Liberdade">
+                <img src="images/download (8).jpg" alt="Ponto de interesse 4 de New York City - Empire State Building">
+                <img src="images/download (9).jpg" alt="Ponto de interesse 5 de New York City - Ponte de Brooklyn">
+                <img src="images/download (10).jpg" alt="Ponto de interesse 6 de New York City - Quinta Avenida">
+                <img src="images/download (11).jpg" alt="Ponto de interesse 7 de New York City - Grand Central Terminal">
+                <img src="images/download (12).jpg" alt="Ponto de interesse 8 de New York City - High Line">
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SECÇÃO ADDED: VÍDEO DE FUNDO (BACKGROUND VIDEO) -->
+    <section id="video-fundo-seccao">
+        <div class="video-fundo-container">
+            <!-- Certifique-se de alterar o link src para o seu vídeo em loop de NYC -->
+            <video autoplay loop muted playsinline class="video-fundo-elemento">
+                <source src="images/NYC_Video2.mp4" type="video/mp4">
+            </video>
+            <div class="video-fundo-overlay">
+                <div class="video-fundo-conteudo">
+                    <h3>A Cidade Que Nunca Dorme</h3>
+                    <p>Sinta a energia imparável das ruas de Manhattan em tempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- SECÇÃO 2: VÍDEO -->
+    <section id="video" class="seccao-multimedia">
+        <div class="conteudo-interno">
+            <h3>Vídeo</h3>
+            <div class="video-wrapper">
+                <!-- Usando ficheiro local MP4 para evitar bloqueios de rede externa -->
+                <video controls width="100%" poster="images/panoramica.avif">
+                    <source src="images/NYC_Video.mp4" type="video/mp4">
+                    O seu navegador não suporta a reprodução de vídeos nativos.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SECÇÃO ADDED: EFEITO PARALLAX -->
+    <section id="parallax-seccao">
+        <div class="parallax-conteudo">
+            <h3>Perspetivas Únicas</h3>
+            <p>Os horizontes geométricos cruzando a história urbana.</p>
+        </div>
+    </section>
+
+    <!-- SECÇÃO 3: POESIA -->
+    <section id="poesia" class="seccao-multimedia">
+        <div class="conteudo-interno">
+            <h3>Poesia</h3>
+            <div class="contentor-poema">
+                <p>Nas avenidas de betão e luzes de néon,</p>
+                <p>Onde o pulsar do mundo nunca quer parar,</p>
+                <p>Ergue-se Nova Iorque, num ritmo frenético,</p>
+                <p>Um palco eterno, um sonho a conquistar.</p>
+                <p>Entre arranha-céus e parques de encantar,</p>
+                <p>A grande metrópole não para de brilhar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO: FOTOGRAFIA EMBLEMÁTICA COM TEXTO ABSOLUTO RESPONSIVO (vw) -->
+    <section id="foto-panoramica-total">
+        <div class="panoramica-container">
+            <!-- Caminho para a imagem panorâmica atualizada de NYC -->
+            <img src="images/panoramica.avif" alt="Vista Panorâmica de New York City" class="img-panoramica">
+            
+            <!-- Bloco de texto posicionado de forma absoluta -->
+            <div class="texto-sobreposto-absoluto">
+                <p class="frase-emblematica">Onde a Cultura e o Ritmo Global se Cruzam</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>DIW 2026 - Universidade Lusófona</p>
+    </footer>
+
+</body>
+</html>

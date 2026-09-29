@@ -1,41 +1,412 @@
-/* Configuração geral da página do Lab 1 */
-body {
-    background-color: #f7e781; /* Cor amarela de fundo original */
-    font-family: Arial, sans-serif;
-    color: #000000;
-    margin: 40px;
-    line-height: 1.6;
+/* ==========================================================================
+   1. RESET, FLUIDEZ E PROTEÇÃO DE IMAGENS
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Título Principal */
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: white;
+    overflow-x: hidden; /* Evita quebras com o menu lateral escondido */
 }
 
-/* Listas (Tecnologias e Laboratórios) */
-ul {
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-/* Configuração dos Links */
-a {
-    color: #0000ee;
-    text-decoration: underline;
-}
-
-/* Estilização da Imagem Wordcloud */
 img {
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    max-width: 300px; /* Largura de 300px ajustada no exercício */
+    max-width: 100%;
     height: auto;
 }
 
-/* Rodapé */
+/* ==========================================================================
+   2. CABEÇALHO E MENU LATERAL INOVADOR (CSS PURO)
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header-logo span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+}
+
+/* Esconder o Checkbox que serve de motor ao menu */
+.menu-checkbox {
+    display: none;
+}
+
+/* Estilo Base dos Links para Desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333333;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    background-color: #f0f2f5;
+    color: #0073e6;
+}
+
+/* Botão de Destaque da UC */
+.UC-btn {
+    background: #2c3e50;
+    color: white;
+}
+
+.UC-btn:hover {
+    background: #1a252f;
+    color: white;
+    filter: brightness(110%);
+}
+
+/* ==========================================================================
+   3. CONFIGURAÇÃO BASE DAS SECÇÕES (100vh)
+   ========================================================================== */
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 90px 20px 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+}
+
+/* ==========================================================================
+   4. SECÇÃO 1: INÍCIO (Hero Image com texto absoluto)
+   ========================================================================== */
+#inicio {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                      url('https://sah-archipedia.org');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.hero-cta {
+    display: inline-block;
+    background-color: #0073e6;
+    color: white !important;
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px; /* Botão em formato pill moderno */
+    box-shadow: 0 4px 15px rgba(0, 73, 230, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-cta:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. SECÇÃO 2: PROJETOS (Estilo Cards com Flexbox Pastel)
+   ========================================================================== */
+#projetos {
+    background-color: #ffdcd2;
+    color: #333333;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.card {
+    background-color: #ffb7c5;
+    border-radius: 16px; /* Bordas um pouco mais suaves */
+    padding: 25px;
+    width: 260px;
+    text-align: left;
+    text-decoration: none;
+    color: #000000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease;
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background-color: #ffa4b5;
+}
+
+/* ==========================================================================
+   6. SECÇÃO 3: DISCIPLINA (Layout Responsivo)
+   ========================================================================== */
+#cadeira {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.cadeira-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.cadeira-texto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.tecnologias-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.tecnologias-lista li {
+    font-size: 1.2rem;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.wordcloud-img {
+    width: 100%;
+    max-width: 300px;
+}
+
 footer {
-    margin-top: 50px;
-    font-size: 0.9rem;
+    background-color: #1a252f;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE CRIATIVA VIA @MEDIA QUERIES
+   ========================================================================== */
+
+/* DESIGN PARA TELEMÓVEL (Ecrãs até 768px) -> Transforma o Menu em Painel Lateral */
+@media (max-width: 768px) {
+    
+    /* Configuração do Ícone do Hambúrguer (Criado com CSS Puro para animação) */
+    .hamburguer-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 1100; /* Fica acima do painel do menu */
+    }
+
+    .bar {
+        width: 100%;
+        height: 3px;
+        background-color: #2c3e50;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* O Menu passa a ser uma Gaveta Escondida no lado direito do ecrã */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+        flex-direction: column;
+        justify-content: center;
+        gap: 25px;
+        padding: 50px;
+        box-sizing: border-box;
+        
+        /* O segredo do deslize: começa empurrado 100% para fora do ecrã */
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        z-index: 1050;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    /* MÁGICA DO CSS PURO: Quando o checkbox invisível estiver ATIVADO (:checked) */
+    
+    /* 1. Faz o menu lateral deslizar para dentro do ecrã */
+    .menu-checkbox:checked ~ .nav-menu {
+        transform: translateX(0);
+    }
+
+    /* 2. Transforma as 3 barras do hambúrguer num ícone de fechar "X" */
+    .menu-checkbox:checked + .hamburguer-label .bar:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+    
+    .menu-checkbox:checked + .hamburguer-label .bar:nth-child(2) {
+        opacity: 0; /* Esconde a barra do meio */
+    }
+    
+    .menu-checkbox:checked + .hamburguer-label .bar:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* Ajustes de conteúdo no telemóvel */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    section {
+        padding-top: 80px;
+    }
+}
+
+/* DESIGN PARA DESKTOP (Ecrãs a partir de 769px) */
+@media (min-width: 769px) {
+    .hamburguer-label {
+        display: none; /* Esconde o ícone de hambúrguer no PC */
+    }
+
+    .cadeira-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .cadeira-texto {
+        text-align: left;
+        flex: 1;
+    }
+
+    .cadeira-imagem {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wordcloud-img {
+        max-width: 380px;
+    }
+}
+/* Layout em Grid para os Artigos de Vídeo */
+.container-artigos-video {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Estilização individual de cada <article> */
+.item-tutorial {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-tutorial h3 {
+    font-size: 1.25rem;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.item-tutorial p {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Garante que o texto ocupe o espaço correto alinhando os vídeos */
+}
+
+/* Truque de Proporção Aspect-Ratio para Vídeos do YouTube Responsivos */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
