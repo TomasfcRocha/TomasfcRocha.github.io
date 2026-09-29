@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriais & CodePens - O Meu Aprendizado</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Estilos rápidos para garantir uma boa apresentação visual dos tutoriais e codepens */
+        .seccao-tutoriais {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .seccao-tutoriais h2 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .grid-tutoriais {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .item-tutorial, .item-codepen {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 4px;
+        }
+        .codepen-container {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho Fixo (Consistente com o seu projeto) -->
+    <header>
+        <div class="header-logo">
+            <h1>Área de Tutoriais</h1>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="tutoriais.html" class="nav-link active">Tutoriais</a>
+            <a href="lab3/multimedia.html" class="nav-link">Multimédia (Lab3)</a>
+        </nav>
+    </header>
+
+ <!-- SECÇÃO 1: VIDEOTUTORIAIS -->
+<section id="videotutoriais" class="seccao-tutoriais">
+    <h2>videotutoriais</h2>
+    <!-- Container que congrega todos os artigos de tutoriais -->
+    <div class="container-artigos-video">
+        
+        <!-- Artigo 1: Seletores e Sua Composição -->
+        <article class="item-tutorial">
+            <h3>Seletores e sua Composição</h3>
+            <p>Aprenda a estruturar a especificidade e a combinar seletores base, descendentes e pseudoclasses em CSS em menos de 2 minutos.</p>
+            <div class="video-container">
+                <!-- Começa no início (0 segundos) -->
+                <iframe src="https://youtube.com" title="Tutorial: Seletores e sua composição em CSS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+
+        <!-- Artigo 2: Flexbox Layout -->
+        <article class="item-tutorial">
+            <h3>Flexbox (Flexible Box Layout)</h3>
+            <p>Como alinhar e distribuir espaço entre elementos de forma unidimensional usando flex-direction, justify-content e align-items.</p>
+            <div class="video-container">
+                <!-- Começa no minuto 2:00 (120 segundos) -->
+                <iframe src="https://youtube.com" title="Tutorial: Flexbox e Alinhamento Unidimensional" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+
+        <!-- Artigo 3: CSS Grid Layout -->
+        <article class="item-tutorial">
+            <h3>CSS Grid Layout</h3>
+            <p>Criar grelhas bidimensionais complexas controlando linhas e colunas de forma nativa e extremamente robusta.</p>
+            <div class="video-container">
+                <!-- Começa no minuto 5:00 (300 segundos) -->
+                <iframe src="https://youtube.com" title="Tutorial: Grelhas Bidimensionais com CSS Grid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+
+        <!-- Artigo 4: Responsividade com Media Queries -->
+        <article class="item-tutorial">
+            <h3>Responsividade com Media Queries (@media)</h3>
+            <p>Como adaptar layouts para ecrãs de telemóveis, tablets e computadores usando breakpoints eficientes no CSS.</p>
+            <div class="video-container">
+                <!-- Começa no minuto 8:30 (510 segundos) -->
+                <iframe src="https://youtube.com" title="Tutorial: Design Responsivo com @media" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+    <!-- SECÇÃO 2: CODEPENS -->
+    <section id="codepens" class="seccao-tutoriais">
+        <h2>CodePens</h2>
+        <p>Demonstrações interativas e pequenos laboratórios de código que desenvolvi até agora.</p>
+        
+        <div class="grid-tutoriais">
+            
+            <!-- Espaço para o CodePen 1 -->
+            <div class="item-codepen">
+                <h3>Laboratório 1: Menu Hambúrguer Animado</h3>
+                <div class="codepen-container">
+                    <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="SEU_SLUG_AQUI" data-user="SEU_USER_AQUI" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid #555; margin: 1em 0; padding: 1em;">
+                        <span>Ver o CodePen <a href="https://codepen.io">Menu Hambúrguer</a>.</span>
+                    </p>
+                    <script async src="https://codepen.io"></script>
+                </div>
+            </div>
+
+            <!-- Espaço para o CodePen 2 -->
+            <div class="item-codepen">
+                <h3>Laboratório 2: Galeria Grid Responsiva</h3>
+                <div class="codepen-container">
+                    <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="OUTRO_SLUG" data-user="SEU_USER_AQUI" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid #555; margin: 1em 0; padding: 1em;">
+                        <span>Ver o CodePen <a href="https://codepen.io">Galeria Grid</a>.</span>
+                    </p>
+                    <script async src="https://codepen.io"></script>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>DIW 2026 - Universidade Lusófona</p>
+    </footer>
+
+</body>
+</html>
