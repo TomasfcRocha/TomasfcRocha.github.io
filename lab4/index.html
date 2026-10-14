@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1c">
+  <title>Órbita — diário de bordo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Órbita, início"><span class="brand-mark">✳</span> ÓRBITA</a>
+    <nav aria-label="Navegação principal">
+      <a href="#missao">A missão</a>
+      <a href="#descoberta">Descoberta</a>
+    </nav>
+    <span class="status"><i></i> SINAL ESTÁVEL</span>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" id="missao" aria-labelledby="titulo">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>01</span> DIÁRIO DE BORDO · SECTOR L-7</p>
+        <h1 id="titulo">O universo<br>está <em>à tua espera.</em></h1>
+        <p class="intro">Uma missão começa com curiosidade. Explora os sinais, regista as tuas descobertas e vê até onde te leva a imaginação.</p>
+        <div class="actions">
+          <button class="button button-primary" id="launch-button" type="button" ondblclick="boostMission()" onclick="launchMission()">Iniciar missão <span aria-hidden="true">↗</span></button>
+          <button class="button button-quiet" id="signal-button" type="button" onclick="changeSignal()">Sintonizar sinal <span aria-hidden="true">⌁</span></button>
+        </div>
+        <p class="mission-message" id="mission-message" aria-live="polite">Sistemas prontos. A nave aguarda instruções.</p>
+      </div>
+      <figure class="space-scene" id="space-scene" onmousemove="moveStar(event)" onmouseover="enterOrbit()" onmouseout="leaveOrbit()">
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=85" alt="Nebulosa colorida e estrelas no espaço profundo">
+        <span class="scene-label">NEBULOSA DE LYRA <b>✦</b></span>
+        <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+        <span class="planet" aria-hidden="true"></span>
+        <span class="coordinate">42° 08′ N<br>07° 31′ E</span>
+      </figure>
+    </section>
+
+    <section class="discovery" id="descoberta" aria-labelledby="discovery-title">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span>02</span> OBSERVATÓRIO</p><h2 id="discovery-title">Pequenos passos,<br><em>grandes descobertas.</em></h2></div>
+        <p class="section-note">Cada clique é mais um passo na missão.<br>Quantos consegues dar?</p>
+      </div>
+      <div class="counter-card" id="counter-card" onclick="incrementCounter()" onmouseover="highlightCounter()" onmouseout="resetCounter()">
+        <div class="counter-icon" aria-hidden="true">◎</div>
+        <div class="counter-copy"><span>PASSOS DE EXPLORAÇÃO</span><p id="counter-hint">Clica neste cartão para registar uma descoberta.</p></div>
+        <output id="counter" aria-live="polite">00</output>
+        <span class="counter-arrow" aria-hidden="true">↗</span>
+      </div>
+      <p class="coordinates" id="coordinates" aria-live="polite">Coordenadas actuais: 0, 0</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#inicio"><span class="brand-mark">✳</span> ÓRBITA</a>
+    <p>Feito de curiosidade e pó de estrelas.</p>
+    <span>MISSÃO 001 · <span id="year"></span></span>
+  </footer>
+</body>
+</html>
