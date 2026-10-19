@@ -1,0 +1,102 @@
+/* Reset: tira as margens e paddings por defeito do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Passo 4: cor de fundo da página */
+body {
+  background-color: #f4f4f6;
+  color: #1a1a1a;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Passo 5: elemento a verde */
+nav {
+  background-color: #2e8b57;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* A imagem ocupa a largura toda, sem espaço por baixo */
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Passo 6: espaço à volta da secção principal */
+main {
+  margin: 40px 60px;
+}
+
+main h2 {
+  margin-bottom: 10px;
+}
+
+/* Passo 5: elemento a preto */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+th, td {
+  border: 1px solid #999;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Cores de texto diferentes (ponto 3) */
+th {
+  background-color: #1d2b53;
+  color: white;
+}
+
+.dados td {
+  color: #1d2b53;
+}
+
+.dados td:last-child {
+  color: #c8102e;
+  font-weight: bold;
+}
+
+.atracoes td:first-child {
+  color: #2e8b57;
+  font-weight: bold;
+}
+
+.atracoes td:last-child {
+  color: #555;
+}
+
+.curiosidades {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  padding-left: 25px;
+  line-height: 1.7;
+}

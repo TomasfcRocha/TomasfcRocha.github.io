@@ -3,35 +3,93 @@
 <head>
     <meta charset="utf-8">
     <title>Primeira Página</title>
-        <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
     <header>
-        <h1>Primeira Página Web!</h1>
-        <a href="lab1/index.html"> Lab1 </a>
-        <a href="lab2/index.html"> Lab2 </a>
-
-    </header>
-
-    <main>
-        <p>Eis a minha primeira página Web!</p>
-        <p>
-            Na Unidade Curricular de
-            <a href="https://moodle.ensinolusofona.pt/course/view.php?id=27320">
-                Desenvolvimento de Interfaces Web
-            </a>
-            abordaremos as seguintes tecnologias Web &#127760;:
-        </p>
+    <p class="site-title">Primeira Página Web!</p>
+</header>
+    <!-- Menu de Navegação Superior -->
+    <nav>
         <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React e Next.js</li>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#cadeira">Interfaces Web</a></li>
         </ul>
-        <p>Iremos criar soluções criativas!</p>
-        <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web">
-    </main>
+    </nav>
+
+    <main> <!-- INÍCIO DO CONTEÚDO PRINCIPAL -->
+
+        <!-- 1ª SECÇÃO: HERO PAGE (INÍCIO) -->
+        <section id="inicio" class="hero-section">
+            <img src="images/wolf.avif" alt="Wolf portrait" class="hero-img">
+            <div class="hero-text-overlay">
+                <!-- GRANDE -->
+                <h1>The Alpha Mindset</h1>
+                <!-- MÉDIO -->
+                <p class="hero-subtitle">Discover the power of nature.</p>
+                <!-- PEQUENO / ACENTO (Botão Call-to-Action) -->
+                <a href="#projetos" class="cta-btn">Ver Projetos</a>
+            </div>
+        </section>
+
+        <!-- 2ª SECÇÃO: PROJETOS / LABS (FUNDO PÊSSEGO COM OS CARDS ROSA) -->
+        <section id="projetos" class="projetos-container">
+            <h2>Projetos / Labs</h2>
+            <p class="subtitulo">Alguns exercícios desenvolvidos ao longo da UC.</p>
+            
+            <div class="labs-grid">
+                <a href="lab1/index.html" class="lab-card">
+                    <h3>Lab 1</h3>
+                    <p>Estrutura base e semântica</p>
+                </a>
+                <a href="lab2/index.html" class="lab-card">
+                    <h3>Lab 2</h3>
+                    <p>Estilos e layout responsivo</p>
+                </a>
+                <a href="lab3/" class="lab-card">
+                    <h3>Lab 3</h3>
+                    <p>Interatividade com JS</p>
+                </a>
+                 <a href="tutoriais.html" class="lab-card">
+                    <h3>tutoriais</h3>
+                    <p>Interatividade com JS</p>
+                </a>
+
+            </div>
+        </section>
+
+    <section id="cadeira" class="disciplina-section">
+    <div class="disciplina-container">
+
+        <div class="disciplina-texto">
+            <h2>Interfaces Web</h2>
+            <p>
+                Na Unidade Curricular de
+                <a href="https://ensinolusofona.pt" target="_blank" rel="noopener">
+                    Desenvolvimento de Interfaces Web
+                </a>
+                abordaremos as seguintes tecnologias Web 🌐:
+            </p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React e Next.js</li>
+            </ul>
+            <p class="destaque">Iremos criar soluções criativas!</p>
+        </div>
+
+        <div class="disciplina-media">
+            <img src="images/diw.svg" alt="Wordcloud de Desenvolvimento de Interfaces Web" class="wordcloud-img">
+        </div>
+
+    </div>
+</section>
+
+    </main> <!-- FIM DO CONTEÚDO PRINCIPAL -->
 
     <footer>
         <p>Universidade Lusófona &copy; 2025</p>

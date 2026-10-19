@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Londres - Multimédia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Menu principal">
+            <a href="index.html"><span class="icone">🏠</span><span>Home</span></a>
+            <a href="local.html"><span class="icone">📍</span><span>Localização</span></a>
+            <a href="multimedia.html" class="ativo"><span class="icone">🖼️</span><span>Multimédia</span></a>
+            <a href="info.html"><span class="icone">ℹ️</span><span>Informação</span></a>
+        </nav>
+        <h1>Londres</h1>
+    </header>
+
+    <main class="largo">
+        <section class="intro">
+            <h2>Galeria Multimédia</h2>
+            <p>Explore o ambiente de Londres através de fotografias, vídeos e poesia.</p>
+        </section>
+
+        <section class="ecra fundo-fotos">
+            <h3>Fotografias</h3>
+            <div class="fotografias">
+                <img src="images/bigben.jpg" alt="Big Ben ao entardecer">
+                <img src="images/towerbridge.jpg" alt="Tower Bridge sobre o rio Tamisa">
+                <img src="images/londoneye.jpg" alt="London Eye junto ao Tamisa">
+                <img src="images/buckingham.jpg" alt="Palácio de Buckingham">
+                <img src="images/torre.jpg" alt="Torre de Londres">
+                <img src="images/stpauls.jpg" alt="Catedral de São Paulo">
+                <img src="images/piccadilly.jpg" alt="Piccadilly Circus à noite">
+                <img src="images/bus.jpg" alt="Autocarro vermelho de dois andares">
+            </div>
+        </section>
+
+        <section class="ecra fundo-video">
+            <h3>Vídeo Turístico</h3>
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/6LaUvOLcicc?si=b-NOfQM2344TXso8"
+                    title="Londres - Vídeo turístico"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="ecra fundo-poema">
+            <h3>Poema de Londres</h3>
+            <blockquote class="poema">
+                <p>
+                    Sobe o Tamisa a névoa devagar,<br>
+                    o Big Ben conta as horas à cidade,<br>
+                    e o vermelho dos autocarros a passar<br>
+                    pinta de pressa a velha claridade.
+                </p>
+                <p>
+                    Em cada ponte, um século a espreitar,<br>
+                    em cada rua, um mundo a começar,<br>
+                    Londres guarda, entre a chuva e o luar,<br>
+                    a promessa de sempre regressar.
+                </p>
+                <footer>Poema original para o projeto DIW</footer>
+            </blockquote>
+        </section>
+
+        <section class="video-background" aria-label="Vídeo de ambiente de Londres">
+           <video class="video-background-media" autoplay muted loop playsinline.>
+  <source src="images/london-background.mp4" type="video/mp4">
+  O navegador não conseguiu carregar este vídeo.
+</video>
+            <div class="video-background-overlay">
+                <p class="video-background-kicker">Londres em movimento</p>
+                <h3>Uma cidade que nunca fica quieta.</h3>
+            </div>
+        </section>
+
+        <section class="parallax" aria-label="Vista panorâmica de Londres">
+            <div class="parallax-content">
+                <p>Entre história e horizonte</p>
+                <h3>Londres revela-se a cada passo.</h3>
+            </div>
+        </section>
+        <section class="destaque-foto">
+            <img src="images/panoramic.jpg" alt="Panorâmica de Londres com o Tamisa e a Tower Bridge">
+            <p class="frase">London is a city of a thousand stories.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>DIW 2026</p>
+    </footer>
+</body>
+</html>
+

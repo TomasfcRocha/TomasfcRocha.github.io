@@ -1,0 +1,490 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* ---------- BASE: TELEMÓVEL ---------- */
+body {
+  background-color: #f4f4f6;
+  color: #1a1a1a;
+  padding-bottom: 70px;            /* a barra fixa não tapa o footer */
+}
+
+header {
+  background-color: #1d2b53;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* MENU: barra fixa em baixo */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;                   /* links lado a lado */
+  background-color: white;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav a {
+  flex: 1;                         /* 4 links com larguras iguais */
+  display: flex;
+  flex-direction: column;          /* ícone por cima do texto */
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  font-size: 0.7rem;
+  color: #666;
+  text-decoration: none;
+  border-top: 3px solid transparent;
+}
+
+nav .icone {
+  font-size: 1.4rem;
+}
+
+nav a:hover,
+nav a.ativo {
+  color: #c8102e;
+  border-top-color: #c8102e;
+}
+
+/* ---------- CONTEÚDO ---------- */
+main {
+  margin: 30px 20px;
+}
+
+main h2 { margin-bottom: 10px; }
+main h3 { margin: 25px 0 10px; }
+main p  { line-height: 1.6; }
+
+main img,
+.video-wrapper {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+body > footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ---------- GALERIA (multimedia) ---------- */
+.fotografias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: #fefae0;
+  border-radius: 8px;
+  width: 565px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.fotografias img {
+  width: 120px;
+  height: 80px;
+  margin: 0;
+  object-fit: cover;
+  border: 3px solid white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- VÍDEO (multimedia) ---------- */
+.video-wrapper { aspect-ratio: 16 / 9; }
+.video-wrapper iframe { width: 100%; height: 100%; border: 0; }
+
+/* ---------- POEMA (multimedia) ---------- */
+.poema {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 20px 25px;
+  background-color: #fefae0;
+  border-left: 5px solid #c8102e;
+  font-style: italic;
+  line-height: 1.8;
+}
+.poema p { margin-bottom: 15px; }
+.poema footer { color: #666; font-size: 0.85rem; text-align: right; font-style: normal; }
+
+/* ---------- TABELAS E LISTA (info) ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+th, td { border: 1px solid #999; padding: 10px; text-align: left; }
+th { background-color: #1d2b53; color: white; }
+.dados td { color: #1d2b53; }
+.dados td:last-child { color: #c8102e; font-weight: bold; }
+.atracoes td:first-child { color: #2e8b57; font-weight: bold; }
+.atracoes td:last-child { color: #555; }
+
+main ul { margin: 10px 0 20px 25px; line-height: 1.7; }
+.curiosidades { max-width: 800px; margin: 0 auto 30px; padding-left: 25px; line-height: 1.7; }
+
+/* ---------- DESKTOP (>= 768px) ---------- */
+@media (min-width: 768px) {
+  body { padding-bottom: 0; }
+
+  header {
+    display: flex;
+    justify-content: space-between;  /* logo à esquerda, menu à direita */
+    align-items: center;
+    padding: 0 40px;
+    text-align: left;
+  }
+
+  h1 { order: 1; }                   /* no HTML o nav vem primeiro; aqui o título passa à frente */
+  nav { order: 2; }
+
+  nav {
+    position: static;                /* volta ao fluxo normal */
+    width: auto;
+    background: transparent;
+    border-top: none;
+    box-shadow: none;
+  }
+
+  nav a {
+    flex: none;
+    flex-direction: row;             /* ícone e texto lado a lado */
+    gap: 8px;
+    padding: 25px 18px;
+    font-size: 1rem;
+    color: white;
+    border-top: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  nav .icone { font-size: 1rem; }
+
+  nav a:hover,
+  nav a.ativo {
+    color: white;
+    border-bottom-color: #c8102e;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  main {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+}
+
+/* ---------- MULTIMÉDIA: LARGURA TOTAL ---------- */
+main.largo {
+  max-width: none;
+  margin: 0;
+}
+
+.intro {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* ---------- SECÇÕES DE ECRÃ ---------- */
+.ecra {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecra h3 {
+  margin: 0 0 25px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.fundo-fotos { background-color: #fefae0; }
+.fundo-video { background-color: #dbe7f5; }
+.fundo-poema { background-color: #fde2e4; }
+
+/* a caixa da galeria fica translúcida para se ver a cor da secção */
+.fundo-fotos .fotografias {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- TRANSITION ---------- */
+.fotografias img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fotografias img:hover {
+  transform: scale(1.2) rotate(2deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.poema {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.poema:hover {
+  transform: translateY(-5px);
+  background-color: white;
+}
+
+/* ---------- FOTO DE LARGURA TOTAL COM FRASE ---------- */
+.destaque-foto {
+  position: relative;            /* referência para o texto absoluto */
+  width: 100%;
+}
+
+.destaque-foto img {
+  width: 100%;
+  max-width: none;               /* anula o max-width: 800px de "main img" */
+  height: 80vh;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+}
+
+.frase {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  max-width: 80%;
+  font-size: max(4vw, 1.2rem);   /* acompanha a janela, com mínimo no telemóvel */
+  font-weight: bold;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+/* ---------- INFORMAÇÕES: COMPOSIÇÃO EM GRELHA ---------- */
+.info-page {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 56px 0 80px;
+}
+
+.info-intro {
+  max-width: 650px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.info-intro .eyebrow {
+  margin-bottom: 12px;
+  color: #c8102e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.info-intro h2 { margin-bottom: 14px; font-size: clamp(2rem, 5vw, 3.5rem); }
+.info-intro > p:last-child { color: #555; }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: minmax(52px, auto);
+  gap: 22px;
+  align-items: start;
+}
+
+.info-card {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 32px);
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(29, 43, 83, 0.08);
+}
+
+.info-card h3 { margin: 0 0 20px; color: #1d2b53; font-size: 1.35rem; }
+.info-card table { margin: 0; font-size: 0.9rem; }
+.info-card th, .info-card td { padding: 9px 8px; }
+.info-card ul, .info-card ol { line-height: 1.8; }
+.praticas-card ul { padding-left: 20px; }
+.info-image { min-width: 0; margin: 0; overflow: hidden; border-radius: 14px; background: #1d2b53; color: white; }
+.info-image img { width: 100%; height: 100%; min-height: 240px; object-fit: cover; display: block; margin: 0; transition: transform 0.5s ease; }
+.info-image:hover img { transform: scale(1.04); }
+.info-image figcaption { padding: 12px 16px; font-size: 0.9rem; }
+.dados-card { grid-column: 1 / 8; grid-row: 1 / span 4; }
+.image-bridge { grid-column: 9 / 13; grid-row: 1 / span 3; }
+.praticas-card { grid-column: 2 / 6; grid-row: 5 / span 3; }
+.grid-space { grid-column: 6 / 9; grid-row: 4 / span 2; min-height: 110px; }
+.image-bus { grid-column: 8 / 13; grid-row: 5 / span 3; }
+.atracoes-card { grid-column: 1 / 7; grid-row: 9 / span 3; }
+.curiosidades-card { grid-column: 7 / 13; grid-row: 9 / span 4; }
+.grid-space-bottom { grid-column: 1 / 3; grid-row: 13 / span 2; min-height: 90px; }
+.image-eye { grid-column: 3 / 8; grid-row: 13 / span 3; }
+
+@media (max-width: 767px) {
+  .info-page { width: min(100% - 28px, 560px); padding: 36px 0 56px; }
+  .info-intro { margin-bottom: 32px; }
+  .info-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; gap: 14px; }
+  .info-card { grid-column: 1 / -1; grid-row: auto; padding: 20px 16px; }
+  .info-image { grid-column: auto; grid-row: auto; }
+  .info-image img { min-height: 160px; }
+  .info-image figcaption { padding: 9px; font-size: 0.78rem; }
+  .grid-space { display: none; }
+  .info-card table { font-size: 0.78rem; }
+  .info-card th, .info-card td { padding: 7px 5px; }
+  .info-card h3 { font-size: 1.2rem; }
+}
+
+/* ---------- LOCALIZAÇÃO: LAYOUT RESPONSIVO COM FLEX ---------- */
+.local-page {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.local-page > h2 {
+  margin-bottom: 28px;
+  color: #1d2b53;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.local-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.local-texto,
+.local-mapa {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.local-texto {
+  padding: clamp(22px, 4vw, 44px);
+  background: #fefae0;
+  border-radius: 14px;
+}
+
+.local-texto h3,
+.local-mapa h3 {
+  margin: 0 0 16px;
+  color: #1d2b53;
+  font-size: 1.35rem;
+}
+
+.local-texto p { line-height: 1.8; color: #444; }
+
+.local-mapa iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 0;
+  border-radius: 14px;
+}
+
+@media (min-width: 768px) {
+  .local-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .local-mapa iframe { height: 450px; }
+}
+
+.video-background {
+  position: relative;
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #1d2b53;
+  color: white;
+  text-align: center;
+}
+
+.video-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(12, 20, 42, 0.48);
+}
+
+.video-background-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-background-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 40px 24px;
+}
+
+.video-background-kicker {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+}
+
+.video-background-overlay h3 {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.video-background-overlay a {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 11px 18px;
+  border: 1px solid white;
+  border-radius: 999px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.video-background-overlay a:hover {
+  background: white;
+  color: #1d2b53;
+}
+/* ---------- PARALLAX ---------- */
+.parallax {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+  background-image: linear-gradient(rgba(15, 25, 45, 0.35), rgba(15, 25, 45, 0.45)), url("images/panoramic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+
+.parallax-content p { margin-bottom: 14px; font-size: 0.9rem; letter-spacing: 0.18em; text-transform: uppercase; }
+.parallax-content h3 { max-width: 850px; font-size: clamp(2rem, 6vw, 4.5rem); line-height: 1.1; }
+
+@media (max-width: 767px) {
+  .video-background { min-height: 60vh; }
+  /* background-attachment: fixed tem suporte irregular e pode causar saltos em mobile. */
+  .parallax { min-height: 55vh; background-attachment: scroll; }
+}

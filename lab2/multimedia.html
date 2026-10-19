@@ -4,6 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Londres - Multimédia</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .fotografias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fefae0;
+    border-radius: 8px;
+
+    width: 565px;        /* cabem exatamente 4 fotos por linha */
+    max-width: 100%;     /* em ecrãs mais pequenos encolhe e as fotos passam para a linha seguinte */
+    margin: 0 auto;      /* centra o contentor */
+}
+
+.fotografias img {
+    width: 120px;
+    height: 80px;
+    margin: 0;           /* anula o margin do styles.css */
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+        .fotografias img:hover {
+            transform: scale(1.15);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,23 +51,40 @@
         <h2>Galeria Multimédia</h2>
         <p>Explore o ambiente de Londres através de fotografias, vídeos e sons característicos da cidade.</p>
         
-        <h3>Fotografia da Cidade</h3>
-        <!-- Substitua o link em src pela imagem que pretender utilizar -->
-        <img src="https://unsplash.com" alt="Vista aérea da cidade de Londres com o Big Ben e o Parlamento ao fundo" width="100%" max-width="800">
+        <section>
+    <h3>Fotografias</h3>
+    <div class="fotografias">
+        <img src="images/bigben.jpg" alt="Big Ben ao entardecer">
+        <img src="images/towerbridge.jpg" alt="Tower Bridge sobre o rio Tamisa">
+        <img src="images/londoneye.jpg" alt="London Eye junto ao Tamisa">
+        <img src="images/buckingham.jpg" alt="Palácio de Buckingham">
+        <img src="images/torre.jpg" alt="Torre de Londres">
+        <img src="images/stpauls.jpg" alt="Catedral de São Paulo">
+        <img src="images/piccadilly.jpg" alt="Piccadilly Circus à noite">
+        <img src="images/bus.jpg" alt="Autocarro vermelho de dois andares">
+    </div>
+</section>
+       <h3>Vídeo Turístico</h3>
+<div class="video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6LaUvOLcicc?si=b-NOfQM2344TXso8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
-        <h3>Vídeo Turístico</h3>
-        <!-- Substitua o link em src pelo caminho do seu vídeo local ou online -->
-        <video controls width="100%" max-width="800">
-            <source src="londres-video.mp4" type="video/mp4">
-            O seu navegador não suporta a reprodução de vídeos em HTML5.
-        </video>
-
-        <h3>Sons de Londres</h3>
-        <!-- Exemplo de áudio com os sinos do Big Ben -->
-        <audio controls>
-            <source src="big-ben-chimes.mp3" type="audio/mpeg">
-            O seu navegador não suporta a reprodução de áudio em HTML5.
-        </audio>
+       <h3>Poema de Londres</h3>
+<blockquote class="poema">
+    <p>
+        Sobe o Tamisa a névoa devagar,<br>
+        o Big Ben conta as horas à cidade,<br>
+        e o vermelho dos autocarros a passar<br>
+        pinta de pressa a velha claridade.
+    </p>
+    <p>
+        Em cada ponte, um século a espreitar,<br>
+        em cada rua, um mundo a começar,<br>
+        Londres guarda, entre a chuva e o luar,<br>
+        a promessa de sempre regressar.
+    </p>
+    <footer>Poema original para o projeto DIW</footer>
+</blockquote>
     </main>
     <footer>
         <p>DIW 2026</p>
