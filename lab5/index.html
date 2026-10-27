@@ -3,26 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Exercícios de JavaScript</title>
-  <style>
-    body { font-family: sans-serif; max-width: 700px; margin: 0 auto; padding: 1rem; }
-    section { margin-bottom: 1.5rem; }
-    hr { margin: 1.5rem 0; }
-
-    #container {
-      height: 200px;
-      background-color: gray;
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-    }
-
-    .bola {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: tomato;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -75,8 +56,8 @@
   <section>
     <h2>4. Formulário</h2>
     <form id="formulario">
-      <input id="nome" type="text" placeholder="insira o seu nome" required>
-      <input id="idade" type="number" placeholder="insira a sua idade" min="0" required>
+      <label for="nome"></label><input id="nome" type="text" placeholder="insira o seu nome" required>
+      <label for="idade"></label><input id="idade" type="number" placeholder="insira a sua idade" min="0" required>
       <input type="submit">
     </form>
     <p id="mensagem"></p>
@@ -102,113 +83,7 @@
     <button id="reset-timer">Reset</button>
   </section>
 
-  <script>
-    // Cada exercício está dentro de um bloco ( () => {...} )() para que
-    // as variáveis de um não entrem em conflito com as de outro.
 
-    // 1. BOTÕES DE CORES
-    (() => {
-      const frase = document.getElementById("frase");
-
-      document.querySelectorAll("button.color").forEach((button) => {
-        button.addEventListener("click", () => {
-          frase.style.color = button.dataset.color;
-        });
-      });
-    })();
-
-    // 2. SELECT COR DA PÁGINA
-    // Aqui mantém-se "function" (e não arrow) porque o enunciado pede o "this":
-    // as arrow functions não têm "this" próprio, por isso ele não seria o select.
-    (() => {
-      document.querySelector("#cor-pagina").addEventListener("change", function () {
-        document.body.style.backgroundColor = this.value;
-      });
-    })();
-
-    // 3. SELECT FLEX (mesma razão: usa "this", logo "function")
-    (() => {
-      document.querySelector("#direcao").addEventListener("change", function () {
-        document.querySelector("#container").style.flexDirection = this.value;
-      });
-    })();
-
-    // 4. FORMULÁRIO
-    (() => {
-      document.querySelector("#formulario").onsubmit = (e) => {
-        e.preventDefault();
-
-        const nome = document.querySelector("#nome").value;
-        const idade = document.querySelector("#idade").value;
-
-        document.querySelector("#mensagem").textContent = `Olá, o ${nome} tem ${idade}!`;
-      };
-    })();
-
-    // 5. CONTADOR COM LOCAL STORAGE
-    (() => {
-      // variáveis
-      const display = document.querySelector("#contador-ls");
-      const btnIncrementar = document.querySelector("#incrementar");
-      const btnDecrementar = document.querySelector("#decrementar");
-      const btnReset = document.querySelector("#reset-ls");
-
-      let contador = Number(localStorage.getItem("contador")) || 0;
-
-      // event handlers
-      const atualizar = () => {
-        display.textContent = contador;
-        localStorage.setItem("contador", contador);
-      };
-      const incrementar = () => { contador++; atualizar(); };
-      const decrementar = () => { contador--; atualizar(); };
-      const reset = () => { contador = 0; atualizar(); };
-
-      // event listeners
-      btnIncrementar.addEventListener("click", incrementar);
-      btnDecrementar.addEventListener("click", decrementar);
-      btnReset.addEventListener("click", reset);
-
-      atualizar();
-    })();
-
-    // 6. TEMPORIZADOR
-    (() => {
-      // variáveis
-      const display = document.querySelector("#contador-timer");
-      const btnParar = document.querySelector("#parar");
-      const btnRetomar = document.querySelector("#retomar");
-      const btnReset = document.querySelector("#reset-timer");
-
-      let contador = 0;
-      let intervalo = null;
-
-      // event handlers
-      const count = () => {
-        contador++;
-        display.textContent = contador;
-      };
-      const iniciar = () => {
-        if (intervalo === null) {
-          intervalo = setInterval(count, 1000);
-        }
-      };
-      const parar = () => {
-        clearInterval(intervalo);
-        intervalo = null;
-      };
-      const reset = () => {
-        contador = 0;
-        display.textContent = contador;
-      };
-
-      // event listeners
-      btnParar.addEventListener("click", parar);
-      btnRetomar.addEventListener("click", iniciar);
-      btnReset.addEventListener("click", reset);
-
-      iniciar();
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
